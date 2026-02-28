@@ -1,24 +1,36 @@
-import { useState } from "react";
-import "./LoginForm.css";
+import React from 'react'
+import { useState } from 'react'
+import './LoginForm.css'
 
-function LoginForm() {
-    const [visible, setVisible] = useState(true);
+const LoginForm = () => {
+  const [type, setType] = useState(null);
+  const [showForm, setShowForm] = useState(false);
+  return (
+    <div>
+      <button className="btn-success" onClick={() => { setType("success"); setShowForm(true); }}>
+        Success Form
+      </button>
+      <button className="btn-warning" onClick={() => { setType("warning"); setShowForm(true); }}>
+        Warning Form
+      </button>
+      <button className="btn-error" onClick={() => { setType("error"); setShowForm(true); }}>
+        Error Form
+      </button>
 
-    if (!visible) return null;
-
-    return (
-        <div className="overlay">
-            <div className="login-form fade-in">
-                <button className="close-btn" onClick={() => setVisible(false)}>
-                    ×
-                </button>
-                <h2>Login</h2>
-                <input type="text" placeholder="Username" className="input" />
-                <input type="password" placeholder="Password" className="input" />
-                <button className="login-btn">Login</button>
-            </div>
+      {showForm && (
+        <div className={`login-form form-${type}`}>
+          <div className='title-and-x'>
+            <h2>Login form {type}</h2>
+            <button className='close-btn' onClick={() => setShowForm(false)}>x</button>
+          </div>
+          <input type="text" placeholder='Username' />
+          <input type="password" placeholder='Password' />
+          <button className='login-btn'>Login</button>
         </div>
-    );
+      )
+      }
+    </div>
+  )
 }
 
-export default LoginForm;
+export default LoginForm
