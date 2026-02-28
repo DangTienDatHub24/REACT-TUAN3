@@ -1,67 +1,99 @@
-.overlay {
-    display: flex;
+body {
+
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.2);
+    align-items: flex-start;
+    width: 100%;
 }
 
-
-.login-form {
-    background: #fff;
-    padding: 30px;
+button {
+    padding: 10px 20px;
     border-radius: 8px;
-    width: 300px;
-    position: relative;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.5s ease;
-}
-
-
-.fade-in {
-    opacity: 1;
-}
-
-
-.close-btn {
-    position: absolute;
-    top: 8px;
-    right: 12px;
-    background: none;
     border: none;
-    font-size: 20px;
     cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+
+.btn-warning {
+    background-color: #ffc107;
     color: black;
 }
 
-
-
-.input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.input:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    outline: none;
+.btn-warning:hover {
+    background-color: #e0a800;
 }
 
 
-.login-btn {
-    width: 100%;
-    padding: 12px;
-    background: #007bff;
+.btn-error {
+    background-color: #dc3545;
     color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
-.login-btn:hover {
-    background: #0056b3;
+.btn-error:hover {
+    background-color: #c82333;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 50px;
+    padding: 50px;
+    border-radius: 30px;
+    opacity: 0.2;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.login-form:hover {
+    opacity: 1;
+}
+
+.login-form input {
+    height: 40px;
+    border-radius: 5px;
+}
+
+input:focus {
+    background-color: lightyellow;
+    color: black;
+    border: 2px solid #555;
+    box-shadow: 10px 10px 5px rgba(81, 203, 238, 1);
+}
+
+
+.login-form .title-and-x {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+}
+
+.close-btn {
+    margin-top: 16px;
+}
+
+.form-success {
+    background-color: green;
+    border: 5px solid rgb(22, 177, 22);
+}
+
+.form-warning {
+    background-color: rgb(172, 172, 44);
+    border: 5px solid rgb(219, 222, 23);
+
+}
+
+.form-error {
+    background-color: red;
+    border: 5px solid rgb(222, 65, 65);
 }
